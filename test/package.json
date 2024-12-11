@@ -1,0 +1,64 @@
+{
+    "name": "@kis/test",
+    "version": "0.0.1",
+    "description": "A directory/file based data storage project",
+    "type": "module",
+    "main": "dist/cjs/index.cjs",
+    "module": "dist/esm/index.mjs",
+    "types": "dist/types/src/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "bin": {
+        "kistest": "./dist/bin/cli.js"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/types/src/index.d.ts",
+            "require": "./dist/cjs/index.cjs",
+            "import": "./dist/esm/index.mjs"
+        },
+        "./package.json": "./package.json"
+    },
+    "scripts": {
+        "test": "npm-run-all clean -p esbuild esbuild:cli esbuild:test -s link test:run",
+        "test:run": "kistest --testExtension .test.js --testOutDir dist/tests",
+        "link": "npm link",
+        "build": "npm-run-all clean -p esbuild esbuild:cli build:types",
+        "build:types": "tsc --project configs/tsconfig.types.json",
+        "esbuild": "node ./scripts/build.js",
+        "esbuild:test": "node ./scripts/test.js",
+        "esbuild:cli": "node ./scripts/buildCli.js",
+        "eslint": "eslint src/**/*.ts --config configs/.eslintrc.json --format stylish",
+        "eslint:fix": "eslint src/**/*.ts --config configs/.eslintrc.json --format stylish --fix",
+        "clean": "rimraf dist",
+        "reinstall": "rimraf node_modules && npm install",
+        "reset": "npm-run-all clean reinstall"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nathanbbarton/kis.git"
+    },
+    "author": "Nathan Barton",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/nathanbbarton/kis/issues"
+    },
+    "homepage": "https://github.com/nathanbbarton/kis#readme",
+    "devDependencies": {
+        "@stylistic/eslint-plugin": "2.3.0",
+        "@types/node": "20.12.12",
+        "@typescript-eslint/eslint-plugin": "7.9.0",
+        "@typescript-eslint/parser": "7.9.0",
+        "esbuild": "0.23.0",
+        "eslint": "8.57.0",
+        "eslint-import-resolver-typescript": "3.6.1",
+        "eslint-plugin-import": "2.29.1",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "6.0.1",
+        "typescript": "5.4.2"
+    },
+    "engines": {
+        "node": ">=20.9.0"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "lib": ["dom"], // Libs to include
+        "strict": true, // Enable all strict type-checking options
+        "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true, // Skip type checking of all declaration files
+        "forceConsistentCasingInFileNames": true, // Ensure case sensitivity
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "outDir": "dist",
+        "paths": {
+            "~/*": ["src/*"]
+        },
+        "types": ["node"],
+    },
+    "include": ["src/**/*", "tests/**/*"], // Include all files in src
+    "exclude": ["node_modules", "dist"] // Exclude directories
+}
