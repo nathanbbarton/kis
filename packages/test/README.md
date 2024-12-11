@@ -1,4 +1,4 @@
-# @kis/test
+# @kistools/test
 Keep It Simple(kis) testing framework. A testing framework focused on being simple,
 limited dependencies, and low configuration.
 

@@ -1,5 +1,5 @@
 {
-    "name": "@kis/test",
+    "name": "@kistools/test",
     "version": "0.0.1",
     "description": "A KeepItSimple(KIS) project for a simple test framework",
     "type": "module",
@@ -10,7 +10,7 @@
         "dist"
     ],
     "bin": {
-        "kistest": "./dist/bin/cli.js"
+        "kistest": "dist/bin/cli.js"
     },
     "exports": {
         ".": {
