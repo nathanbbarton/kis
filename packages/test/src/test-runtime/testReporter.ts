@@ -73,10 +73,12 @@ class TestReporter {
             const printNode = (descriptor: string, prefix: string, isLast: boolean) => {
                 const submission = testMap.get(descriptor)
                 if (!submission) {
-                    throw Error(`failed to find test submission for ${descriptor} while printing test tree result`)
+
+                    throw Error(`failed to print test tree, no submission for ${descriptor}`)
                 } else {
                     const passMark = submission.pass ? "✔️ " : "❌"
-                    const logString = `${prefix}${isLast ? "└──" : "├──"} ${passMark} ${submission.descriptor}`
+                    const isLastStr = isLast ? "└──" : "├──"
+                    const logString = `${prefix}${isLastStr} ${passMark} ${descriptor}`
                     console.log(logString)
 
                     const newPrefix = prefix + (isLast ? "    " : "│   ")

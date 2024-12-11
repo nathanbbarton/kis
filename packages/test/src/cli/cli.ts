@@ -20,7 +20,7 @@ const kist = (args: string[]) => {
     } else {
         const testExtensionIndex = args.findIndex(arg => arg === "--testExtension")
         const testExtension = args[testExtensionIndex + 1]
-    
+
         const testOutDirIndex = args.findIndex(arg => arg === "--testOutDir")
         const testOutDir = args[testOutDirIndex + 1]
 
