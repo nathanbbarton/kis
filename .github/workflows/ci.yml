@@ -30,7 +30,7 @@ jobs:
       working-directory: packages/test
 
     - name: Lint code
-      run: npm run lint
+      run: npm run eslint
       working-directory: packages/test
 
     - name: Run tests
