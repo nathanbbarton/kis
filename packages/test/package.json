@@ -1,11 +1,11 @@
 {
     "name": "@kistools/test",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A KeepItSimple(KIS) project for a simple test framework",
     "type": "module",
     "main": "dist/cjs/index.cjs",
     "module": "dist/esm/index.mjs",
-    "types": "dist/types/src/index.d.ts",
+    "types": "dist/types/index.d.ts",
     "files": [
         "dist"
     ],
@@ -14,7 +14,7 @@
     },
     "exports": {
         ".": {
-            "types": "./dist/types/src/index.d.ts",
+            "types": "./dist/types/index.d.ts",
             "require": "./dist/cjs/index.cjs",
             "import": "./dist/esm/index.mjs"
         },
